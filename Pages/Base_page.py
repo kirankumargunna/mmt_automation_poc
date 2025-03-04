@@ -16,25 +16,25 @@ class BasePageFragments(Webelement):
 
 
     @classmethod
-    def setup_method(cls):
+    def setup_method(cls):    #Runs before each test method in a test class.
         cls.homepagedata=HomePageData()
         cls.h=Helper
 
     def close_login_model(self):
-        element=Webelement.wait_for_element_visible(BasePageFragments.close_loginModel)
+        element=self.wait_for_element_visible(BasePageFragments.close_loginModel)
         if not element:
             return
-        Webelement.is_element_displayed(BasePageFragments.login_mobilenumber)
-        Webelement.click_element(BasePageFragments.close_loginModel)
+        self.is_element_displayed(BasePageFragments.login_mobilenumber)
+        self.click_element(BasePageFragments.close_loginModel)
 
     def set_date(self):
-        Webelement.click_element(BasePageFragments.travel_date)
+        self.click_element(BasePageFragments.travel_date)
         self.h.get_date_of_travel()
 
     def logo_visability_and_navigation_in_pages(self):
-        assert Webelement.findElement(BasePageFragments.logo_stickheader), "logo is not displayed in stick header"
-        assert Webelement.verify_page_refresh(BasePageFragments.logo_stickheader), "page not refreshed on clicking mmt logo"
-        assert Webelement.findElements(BasePageFragments.logo_mmt_homepage), "not navigated to on clicking MMT logo in stick header"
+        assert self.findElement(BasePageFragments.logo_stickheader), "logo is not displayed in stick header"
+        assert self.verify_page_refresh(BasePageFragments.logo_stickheader), "page not refreshed on clicking mmt logo"
+        assert self.findElements(BasePageFragments.logo_mmt_homepage), "not navigated to on clicking MMT logo in stick header"
 
     def verify_elements_sticky_header_in_pages(self, elements: List[str]) -> bool:
         """
@@ -53,7 +53,7 @@ class BasePageFragments(Webelement):
             actual_elements.append(element.text.strip())  # Ensure no extra spaces
 
         # Now compare both lists
-        if sorted(actual_elements) == sorted(expected_elements):
+        if set(actual_elements) == set(expected_elements):
             print("The elements in the sticky header matched.")
             return True
         else:

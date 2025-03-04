@@ -1,2 +1,8 @@
 [tool.myapp]
 base_url = "https://www.makemytrip.com/"  
+
+[tool.pytest.ini_options]
+markers = [
+    "buspage: Test cases related to the bus page",  
+    "smoke: Smoke test cases"
+]

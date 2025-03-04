@@ -15,7 +15,7 @@ class webdrivers(DriverInitilization):
             options.add_argument("--incognito")
             options.add_argument("--ignore-certificate-errors")
             options.add_argument("--ignore-ssl-errors")
-            # options.add_argument("--headless=new") 
+            #options.add_argument("--headless=new") 
             driver = webdriver.Chrome(options=options)
         else:
             raise ValueError(f"please check the browser entered Invalid browser name: {browser}")

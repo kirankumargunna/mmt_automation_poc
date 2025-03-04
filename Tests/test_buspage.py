@@ -2,8 +2,8 @@ import pytest
 from Pages.Base_page import BasePageFragments
 from Pages.Home_page import Homepage_mmt
 from Pages.Buses_page import Buses_mmt
-class Test_mmt_busespage(BasePageFragments):
 
+class Test_mmt_busespage(BasePageFragments):
 
     @pytest.mark.buspage
     @pytest.mark.smoke

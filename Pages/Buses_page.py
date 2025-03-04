@@ -19,13 +19,13 @@ class Buses_mmt(Homepage_mmt):
        buseslist=busespage_locators.BUSES_LIST
 
        def verify_searchbar_busespage(self):
-           assert Webelement(Buses_mmt.searchBar), "search bar is not dispalyed in buses page "
+           assert self.findElement(Buses_mmt.searchBar), "search bar is not dispalyed in buses page "
 
        def enter_to_and_from_city(self):
-           Webelement.click_element(Buses_mmt.source_city)
-           Webelement.send_text(Homepage_mmt.input_field,self.homepagedata.Domestic_cities[2])
-           Webelement.click_element(Buses_mmt.destination_city)
-           Webelement.send_text(Homepage_mmt.input_field,self.homepagedata.International_cities[2])
+           self.click_element(Buses_mmt.source_city)
+           self.send_text(Homepage_mmt.input_field,self.homepagedata.Domestic_cities[2])
+           self.click_element(Buses_mmt.destination_city)
+           self.send_text(Homepage_mmt.input_field,self.homepagedata.International_cities[2])
        
        def select_date(self):
            Webelement.click_element(Buses_mmt.otherdate)
