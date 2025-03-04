@@ -5,7 +5,7 @@ from _Wrapper.DriverInitilization import DriverInitilization
 
 class webdrivers(DriverInitilization):
     
-    @classmethod
+    @classmethod 
     def start_browser(cls,browser):
         if browser.lower() == "chrome":
             options = ChromeOptions()
