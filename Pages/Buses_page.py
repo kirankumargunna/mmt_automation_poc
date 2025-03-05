@@ -40,12 +40,9 @@ class Buses_mmt(Homepage_mmt):
 
             return [element.text for element in elements]
        
-       def avilablefilters(self):
-           filters=[]
+       def avilable_filters(self):
            elements=Webelement.findElements(Buses_mmt.avilableFilters)
-           for element in elements:
-                filters.append(element.text)
-
+           filters=[element.text for element in elements]
            return filters
        
        

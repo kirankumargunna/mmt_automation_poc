@@ -15,8 +15,8 @@ class flights_MMT(Homepage_mmt):
     current_trip_type=flightPage_locators.CURRENT_TRIP_TYPE
     trip_type_dropdown=flightPage_locators.TRIP_TYPE_DROPDOWN
     fareType=flightPage_locators.FARE_TYPE
-    avilable_filters=flightPage_locators.FILTERS_FLIGHTS
-    avilable_icons_stickyHeader=flightPage_locators.ICON_IN_STICKY_HEADER
+    available_filters=flightPage_locators.FILTERS_FLIGHTS
+    available_icons_sticky_header=flightPage_locators.ICON_IN_STICKY_HEADER
 
 
 
@@ -26,18 +26,24 @@ class flights_MMT(Homepage_mmt):
     def verify_fareType_bar(self):
         assert Webelement.findElement(flights_MMT.fareType_bar), "fare type bar is not displayed"
     
-    def verfiy_search_button_status(self):
+    def verify_search_button_status(self):
         
         if Webelement.findElement(flights_MMT.search_button_enabled):
             return True
         elif Webelement.findElement(flights_MMT.search_button_disabled):
             return False
+        else :
+            raise ValueError("search button is not avilable")
+        
     def select_trip_type(self,trip_type:str):
 
         if Webelement.findElement(flights_MMT.current_trip_type).text !=trip_type:
             Webelement.click_element(flights_MMT.current_trip_type)
             element=Webelement.findElement(flights_MMT.trip_type_dropdown)
-            dropdown=Select(element)
+            if element is not None:
+                dropdown=Select(element)
+            else:
+                raise ValueError("No elements in dropdown")
             dropdown.select_by_visible_text(trip_type)
 
 
@@ -51,18 +57,15 @@ class flights_MMT(Homepage_mmt):
         Webelement.set_date(HomePageData.TRAVEL_DATE)
     
     def click_search_button(self):
-        assert self.verfiy_search_button_status, "search button is not enabled"
+        assert self.verfiy_search_button_status(), "search button is not enabled"
         Webelement.click_element(flights_MMT.search_button_enabled)
         
     def select_fare_type(self):
         Webelement.click_element(flights_MMT.fareType)
 
     def avilableFilters(self)->list[str]:
-        filters=[]
         elements=Webelement.findElements(flights_MMT.avilable_filters)
-        for element in elements:
-            filters.append(element.text)
-
+        filters=[element.text for element in elements]
         return filters
     
     def avilable_icons_sticky_Header(self):

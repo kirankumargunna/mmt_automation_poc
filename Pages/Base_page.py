@@ -1,5 +1,4 @@
 from typing import List
-
 from Locators.Homepage_locators import homepage_locators
 from _Wrapper.Webelements import Webelement
 from _Data.data import HomePageData
