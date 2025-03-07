@@ -17,8 +17,11 @@ class flights_MMT(Homepage_mmt):
     fareType=flightPage_locators.FARE_TYPE
     available_filters=flightPage_locators.FILTERS_FLIGHTS
     available_icons_sticky_header=flightPage_locators.ICON_IN_STICKY_HEADER
+    popup=flightPage_locators.POPUPS
 
 
+    def close_popups(self):
+        self.click_element(flights_MMT.popup)
 
     def verify_search_bar_flightPage(self):
         assert Webelement.findElement(flights_MMT.search_bar) , "search bar is not dispaled in flight page"
@@ -57,22 +60,19 @@ class flights_MMT(Homepage_mmt):
         Webelement.set_date(HomePageData.TRAVEL_DATE)
     
     def click_search_button(self):
-        assert self.verfiy_search_button_status(), "search button is not enabled"
+        assert self.verify_search_button_status(), "search button is not enabled"
         Webelement.click_element(flights_MMT.search_button_enabled)
         
     def select_fare_type(self):
         Webelement.click_element(flights_MMT.fareType)
 
     def avilableFilters(self)->list[str]:
-        elements=Webelement.findElements(flights_MMT.avilable_filters)
+        elements=Webelement.findElements(flights_MMT.available_filters)
         filters=[element.text for element in elements]
         return filters
     
     def avilable_icons_sticky_Header(self):
-        elements=Webelement.findElements(flights_MMT.avilable_icons_stickyHeader)
+        elements=Webelement.findElements(flights_MMT.available_icons_sticky_header)
         icons=[element.text for element in elements]
 
         return icons
-        
-
-

@@ -13,6 +13,7 @@ class webdrivers(DriverInitilization):
             options.add_experimental_option("excludeSwitches", ["enable-automation"])
             options.add_argument("--start-maximized")
             options.add_argument("--incognito")
+            options.add_argument("--disable-blink-features=AutomationControlled") # Disables the 'navigator.webdriver' flag to make Selenium less detectable as an automation tool
             options.add_argument("--ignore-certificate-errors")
             options.add_argument("--ignore-ssl-errors")
             #options.add_argument("--headless=new") 

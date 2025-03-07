@@ -10,7 +10,7 @@ from _Wrapper import Helper
 class Webelement(webdrivers):
 
     @classmethod
-    def wait(cls,timeout: int=10):
+    def wait(cls,timeout: int=15):
         return WebDriverWait(cls._browser,timeout)
 
     @classmethod

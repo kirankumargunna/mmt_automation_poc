@@ -20,6 +20,6 @@ class flightPage_locators(Baselocators):
         SEARCH_BUTTON_ENABLED=(By.ID,"search-button")
         CURRENT_TRIP_TYPE=(By.XPATH,"//div[@class='multiDropDownVal']")
         TRIP_TYPE_DROPDOWN=(By.XPATH,"//div[@class='dropDownList']")
-        
+        POPUPS=(By.CSS_SELECTOR,"button.button")
 
 
