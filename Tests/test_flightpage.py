@@ -62,6 +62,7 @@ class Test_mmt_flightapage(BasePageFragments):
         flights_MMT.select_trip_type(self,FD.Trip_types[1])
 
         # enter to and from city 
+        
 
         flights_MMT.enter_to_and_from_city(self)
 

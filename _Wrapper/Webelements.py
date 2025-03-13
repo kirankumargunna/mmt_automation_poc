@@ -5,9 +5,11 @@ from drivers.webdrivers import webdrivers
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from _Wrapper import Helper
+from Config.log_config import logging_setup
 
 
 class Webelement(webdrivers):
+   
 
     @classmethod
     def wait(cls,timeout: int=15):
@@ -57,6 +59,8 @@ class Webelement(webdrivers):
     def click_element(cls,element_locator):
         if not cls._browser:
             raise ValueError("Browser not initialized. Call pytest_start_browser() first.")
+        # if not cls.wait_for_element_visible(element_locator):
+
         element=cls.wait_for_element_visible(element_locator)
         element.click()
 
@@ -115,7 +119,7 @@ class Webelement(webdrivers):
         return cls._browser.title
     
     @classmethod
-    def verify_new_tab(cls, element_locator=None):
+    def verify_new_tab_title(cls, element_locator=None):
 
         # get the no of tabs before clicking
         initial_tabs=cls._browser.window_handles

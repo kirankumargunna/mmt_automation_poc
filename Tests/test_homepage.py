@@ -11,7 +11,7 @@ class Test_mmt_homepage(BasePageFragments):
         BasePageFragments.close_login_model(self)
 
         #verify that make my trip logo is visable and on clicking it will navigate to home page
-        Homepage_mmt.logo_visablity_and_navigation(self)
+        Homepage_mmt.logo_visibility_and_navigation(self)
 
         #verify that list your property hyper link is visable and avigates to new web page in another tab
         Homepage_mmt.list_your_property_hyperlink(self)

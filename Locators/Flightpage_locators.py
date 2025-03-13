@@ -2,10 +2,10 @@
 import random
 from selenium.webdriver.common.by import By
 from _Data.data import FlightPageData as FD
-from Locators.Base_locators import Baselocators
+from Locators.Base_locators import BaseLocators
 
 
-class flightPage_locators(Baselocators):
+class FlightPageLocators(BaseLocators):
 
         SEARCH_BAR=(By.ID,'widgetHeader')
         FARETYPE_BAR=(By.XPATH,"//div[@class='fareTypeWrapper']")
@@ -20,6 +20,5 @@ class flightPage_locators(Baselocators):
         SEARCH_BUTTON_ENABLED=(By.ID,"search-button")
         CURRENT_TRIP_TYPE=(By.XPATH,"//div[@class='multiDropDownVal']")
         TRIP_TYPE_DROPDOWN=(By.XPATH,"//div[@class='dropDownList']")
-        POPUPS=(By.CSS_SELECTOR,"button.button")
 
 

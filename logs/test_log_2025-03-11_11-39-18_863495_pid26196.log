@@ -1,0 +1,26 @@
+2025-03-11 11:39:19,825 [INFO] [26196] Login modal closed successfully.
+2025-03-11 11:39:29,006 [ERROR] [26196] Flight search failed: Webelement.set_date() missing 1 required positional argument: 'date'
+2025-03-11 11:39:44,272 [ERROR] [26196] logo verification failed : Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6F835C6A5+28789]
+	(No symbol) [0x00007FF6F82C5B20]
+	(No symbol) [0x00007FF6F8158F9A]
+	(No symbol) [0x00007FF6F81AF346]
+	(No symbol) [0x00007FF6F81AF57C]
+	(No symbol) [0x00007FF6F8202B17]
+	(No symbol) [0x00007FF6F81D736F]
+	(No symbol) [0x00007FF6F81FF7E3]
+	(No symbol) [0x00007FF6F81D7103]
+	(No symbol) [0x00007FF6F819FFC0]
+	(No symbol) [0x00007FF6F81A1273]
+	GetHandleVerifier [0x00007FF6F86A1AED+3458237]
+	GetHandleVerifier [0x00007FF6F86B829C+3550316]
+	GetHandleVerifier [0x00007FF6F86ADB9D+3507565]
+	GetHandleVerifier [0x00007FF6F8422C6A+841274]
+	(No symbol) [0x00007FF6F82D09EF]
+	(No symbol) [0x00007FF6F82CCB34]
+	(No symbol) [0x00007FF6F82CCCD6]
+	(No symbol) [0x00007FF6F82BC119]
+	BaseThreadInitThunk [0x00007FFF98F27374+20]
+	RtlUserThreadStart [0x00007FFF9A71CC91+33]
+

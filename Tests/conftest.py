@@ -51,16 +51,16 @@ def pytest_runtest_setup(item:Item)->None:
         # For function-based tests, attach to item (less common)
         item.driver = driver
 
-# # Cleanup in a teardown hook
-# def pytest_runtest_teardown(item: Item) -> None:
-#     if hasattr(item, "driver"):
-#         try:
-#             item.driver.quit()
-#         except Exception as e:
-#             print(f"Warning: Failed to quit driver: {e}")
-#     elif item.cls and hasattr(item.cls, "driver"):
-#         try:
-#             item.cls.driver.quit()
-#         except Exception as e:
-#             print(f"Warning: Failed to quit driver: {e}")
+# Cleanup in a teardown hook
+def pytest_runtest_teardown(item: Item) -> None:
+    if hasattr(item, "driver"):
+        try:
+            item.driver.quit()
+        except Exception as e:
+            print(f"Warning: Failed to quit driver: {e}")
+    elif item.cls and hasattr(item.cls, "driver"):
+        try:
+            item.cls.driver.quit()
+        except Exception as e:
+            print(f"Warning: Failed to quit driver: {e}")
 
