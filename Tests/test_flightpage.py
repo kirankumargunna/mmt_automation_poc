@@ -1,4 +1,5 @@
 import pytest
+import allure
 from Pages.Base_page import BasePageFragments
 from Pages.Home_page import Homepage_mmt
 from Pages.Flight_page import flights_MMT
@@ -6,6 +7,9 @@ from _Data.data import FlightPageData as FD, HomePageData as HD
 
 class Test_mmt_flightapage(BasePageFragments):
 
+    @allure.title("flight page smoke test")
+    @allure.description("To verify all the elements are loaded in the flight search page")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.flightpage
     @pytest.mark.smoke
     def test_smoketest_flightpage(self):

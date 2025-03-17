@@ -1,0 +1,2 @@
+[32mINFO    [0m test_case_name_test_logger_21408:Base_page.py:43 Login modal closed successfully.
+[32mINFO    [0m test_case_name_test_logger_21408:Home_page.py:154 Flight search initiated successfully

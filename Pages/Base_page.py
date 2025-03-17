@@ -1,4 +1,6 @@
 from typing import List
+
+import pytest
 from Locators.Homepage_locators import HomepageLocators
 from Locators.Base_locators import BaseLocators
 

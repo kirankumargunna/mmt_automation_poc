@@ -1,9 +1,14 @@
 import pytest
 from Pages.Base_page import BasePageFragments
 from Pages.Home_page import Homepage_mmt
+import allure
 
 class Test_mmt_homepage(BasePageFragments):
 
+
+    @allure.title("Homepage Smoke Test")
+    @allure.description('to verify the all the elements are loaded in the home page')
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.Homepage
     @pytest.mark.smoke
     def test_homepage_elements(self):

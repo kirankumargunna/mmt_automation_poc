@@ -43,7 +43,7 @@ def logging_setup(log_directory: str= "logs", log_level : int =logging.INFO)-> l
     log_file = os.path.join(log_directory, f"test_log_{timestamp}_pid{process_id}.log")
 
     # Create and configure logger
-    logger = logging.getLogger(f"test_logger_{process_id}")
+    logger = logging.getLogger(f"test_case_name_test_logger_{process_id}")
     logger.setLevel(log_level)
 
     # Avoid duplicate handlers if logger is already configured

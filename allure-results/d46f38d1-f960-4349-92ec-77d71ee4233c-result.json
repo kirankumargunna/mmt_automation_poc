@@ -1,0 +1,1 @@
+{"name": "flight page smoke test", "status": "passed", "description": "To verify all the elements are loaded in the flight search page", "start": 1742195697906, "stop": 1742195712783, "uuid": "86cbd71b-29f2-47d4-a205-d6bbd6665f5a", "testCaseId": "552e5aa82b59d06eb2574444d4efa31a", "fullName": "Tests.test_flightpage.Test_mmt_flightapage#test_smoketest_flightpage"}
