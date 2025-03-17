@@ -1,9 +1,14 @@
 import pytest
 from Pages.Base_page import BasePageFragments
 from Pages.Home_page import Homepage_mmt
+import allure
 
 class Test_mmt_homepage(BasePageFragments):
 
+
+    @allure.title("Homepage Smoke Test")
+    @allure.description('to verify the all the elements are loaded in the home page')
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.Homepage
     @pytest.mark.smoke
     def test_homepage_elements(self):
@@ -11,7 +16,7 @@ class Test_mmt_homepage(BasePageFragments):
         BasePageFragments.close_login_model(self)
 
         #verify that make my trip logo is visable and on clicking it will navigate to home page
-        Homepage_mmt.logo_visablity_and_navigation(self)
+        Homepage_mmt.logo_visibility_and_navigation(self)
 
         #verify that list your property hyper link is visable and avigates to new web page in another tab
         Homepage_mmt.list_your_property_hyperlink(self)

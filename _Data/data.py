@@ -41,12 +41,14 @@ class FlightPageData:
         return cities_list[index] if index < len(cities_list) else "Unknown"
 
     FILTERS = [
-        "Applied Filters",
         "Popular Filters",
         "One Way Price",
         f"Stops From {HomePageData.DOMESTIC_CITIES[1]}",
         f"Departure From {HomePageData.DOMESTIC_CITIES[1]}",
         f"Arrival at {HomePageData.INTERNATIONAL_CITIES[1]}",
-        "Airlines"
+        'Layover Airports',
+        'Alliances & Airlines',
+        'Layover Duration',
+        'Duration'
     ]
     

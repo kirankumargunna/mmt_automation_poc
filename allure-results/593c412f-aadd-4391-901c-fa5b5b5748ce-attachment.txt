@@ -1,0 +1,5 @@
+[32mINFO    [0m test_logger_18164:Base_page.py:41 Login modal closed successfully.
+[32mINFO    [0m test_logger_18164:Home_page.py:40 Logo visibility and navigation verified.
+[32mINFO    [0m test_logger_18164:Home_page.py:61 List Your Property hyperlink verified.
+[32mINFO    [0m test_logger_18164:Home_page.py:85 Introducing MyBiz tooltip verified.
+[32mINFO    [0m test_logger_18164:Home_page.py:112 Login/Create Account functionality verified.
