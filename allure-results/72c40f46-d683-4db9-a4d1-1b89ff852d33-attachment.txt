@@ -1,0 +1,25 @@
+[32mINFO    [0m test_case_name_test_logger_22652:Base_page.py:43 Login modal closed successfully.
+[32mINFO    [0m test_case_name_test_logger_22652:Home_page.py:154 Flight search initiated successfully
+[31m[1mERROR   [0m test_case_name_test_logger_22652:Base_page.py:92 logo verification failed : Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF64AF9FE45+26629]
+	(No symbol) [0x00007FF64AF06010]
+	(No symbol) [0x00007FF64AD9931A]
+	(No symbol) [0x00007FF64ADEF8E7]
+	(No symbol) [0x00007FF64ADEFB1C]
+	(No symbol) [0x00007FF64AE434A7]
+	(No symbol) [0x00007FF64AE17AEF]
+	(No symbol) [0x00007FF64AE40169]
+	(No symbol) [0x00007FF64AE17883]
+	(No symbol) [0x00007FF64ADE0550]
+	(No symbol) [0x00007FF64ADE1803]
+	GetHandleVerifier [0x00007FF64B2F72BD+3529853]
+	GetHandleVerifier [0x00007FF64B30DA22+3621858]
+	GetHandleVerifier [0x00007FF64B3024D3+3575443]
+	GetHandleVerifier [0x00007FF64B06B77A+860474]
+	(No symbol) [0x00007FF64AF1088F]
+	(No symbol) [0x00007FF64AF0CBC4]
+	(No symbol) [0x00007FF64AF0CD66]
+	(No symbol) [0x00007FF64AEFC2C9]
+	BaseThreadInitThunk [0x00007FFD04D77374+20]
+	RtlUserThreadStart [0x00007FFD04EBCC91+33]

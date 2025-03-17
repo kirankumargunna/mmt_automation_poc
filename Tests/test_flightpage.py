@@ -1,4 +1,5 @@
 import pytest
+import allure
 from Pages.Base_page import BasePageFragments
 from Pages.Home_page import Homepage_mmt
 from Pages.Flight_page import flights_MMT
@@ -6,6 +7,9 @@ from _Data.data import FlightPageData as FD, HomePageData as HD
 
 class Test_mmt_flightapage(BasePageFragments):
 
+    @allure.title("flight page smoke test")
+    @allure.description("To verify all the elements are loaded in the flight search page")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.flightpage
     @pytest.mark.smoke
     def test_smoketest_flightpage(self):
@@ -15,6 +19,12 @@ class Test_mmt_flightapage(BasePageFragments):
 
         #verfiy mmt logo is visable and navigates to home page on clicking 
         flights_MMT.logo_visability_and_navigation_in_pages(self)
+        
+        # agian click on search in home to navigate to flight page 
+        self.click_element(Homepage_mmt.search)
+
+        # close the popups appeared 
+        flights_MMT.close_popups(self)
 
         # verify that search bar is displayed 
         flights_MMT.verify_search_bar_flightPage(self)
@@ -26,7 +36,6 @@ class Test_mmt_flightapage(BasePageFragments):
         #verify the avilable filters in the filghts page
 
         Avilable_Filters=flights_MMT.avilableFilters(self)
-
         missing = set(FD.FILTERS) - set(Avilable_Filters)  # Elements in FD.Filters but not in Avilable_Flights
         extra = set(Avilable_Filters) - set(FD.FILTERS)  # Elements in Avilable_Flights but not in FD.Filters
 
@@ -35,7 +44,6 @@ class Test_mmt_flightapage(BasePageFragments):
         #verify the avilable icons in the filghts page sticky header
 
         Avilable_icons=flights_MMT.avilable_icons_sticky_Header(self)
-
         missing = set(HD.NAVIGATION_BAR_ELEMENTS) - set(Avilable_icons)  # Elements in FD.Filters but not in Avilable_Flights
         extra = set(Avilable_icons) - set(HD.NAVIGATION_BAR_ELEMENTS)  # Elements in Avilable_Flights but not in FD.Filters
 
@@ -58,6 +66,7 @@ class Test_mmt_flightapage(BasePageFragments):
         flights_MMT.select_trip_type(self,FD.Trip_types[1])
 
         # enter to and from city 
+        
 
         flights_MMT.enter_to_and_from_city(self)
 
